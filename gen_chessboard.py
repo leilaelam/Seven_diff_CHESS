@@ -19,7 +19,6 @@ nb_img=25
 for i in range(nb_img):
         board = chess.Board('8/8/8/8/8/8/8/8 w - - 0 1')
         nb_pieces=random.randint(5,25)
-        board.unicode(borders=True)
         nb_ajout=7
         for j in range(nb_pieces):
                 piece = random.choice(['Q', 'K', 'N', 'B', 'R', 'P', 'q', 'k', 'n', 'b', 'r', 'p'])
@@ -38,5 +37,5 @@ for i in range(nb_img):
                     im1 = ImageOps.expand(im01, border=30)
                     im02 = Image.open(f'/board_png/chess_{i}_{j}_{k}.png')
                     im2 = ImageOps.expand(im02, border=30)
-                    get_concat_h(im1, im2).save(f'/img_chess/img_{76+j}_{k}.png')
+                    get_concat_h(im1, im2).save(f'/img_chess/img_{76+i}_{j}_{k}.png')
         print(f"Image n°{i}")
