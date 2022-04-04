@@ -37,5 +37,5 @@ for i in range(nb_img):
                     im1 = ImageOps.expand(im01, border=30)
                     im02 = Image.open(f'/board_png/chess_{i}_{j}_{k}.png')
                     im2 = ImageOps.expand(im02, border=30)
-                    get_concat_h(im1, im2).save(f'/img_chess/img_{76+i}_{j}_{k}.png')
+                    get_concat_h(im1, im2).save(f'/img_chess/img_{76+i}_{k}.png')
         print(f"Image n°{i}")
