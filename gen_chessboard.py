@@ -16,12 +16,12 @@ def get_concat_h(im1, im2):
     return dst
 
 
-nb_img = 15
+nb_img = 25
 
 for i in range(nb_img):
     board = chess.Board('8/8/8/8/8/8/8/8 w - - 0 1')
     nb_pieces = random.randint(5, 25)
-    nb_ajout = 7
+    nb_ajout = 8
     for j in range(nb_pieces):
         piece = random.choice(['Q', 'K', 'N', 'B', 'R', 'P', 'q', 'k', 'n', 'b', 'r', 'p'])
         list_squares = random.sample(range(0, 63), 63)
@@ -31,9 +31,9 @@ for i in range(nb_img):
     svg2png(bytestring=board_svg, write_to=f"./board_png/chess_{i}_{0}.png")
     im01 = Image.open(f'./board_png/chess_{i}_{0}.png')
     im1 = ImageOps.expand(im01, border=30)
+    get_concat_h(im1, im1).save(f'./img_chess/img_{76 + i}_{0}.png')
 
     for k in range(1, nb_ajout):
-        print("aa")
         piece = random.choice(['Q', 'K', 'N', 'B', 'R', 'P', 'q', 'k', 'n', 'b', 'r', 'p'])
         list_squares = random.sample(range(0, 63), 63)
         square = list_squares.pop(0)
